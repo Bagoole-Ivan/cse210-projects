@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep2 World!");
-        Console.Write("What is the grade? ");
+        Console.WriteLine("What is the grade? ");
         int grade = Console.Read();
         if (grade < 60)
         {
