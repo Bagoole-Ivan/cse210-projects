@@ -6,8 +6,9 @@ class Program
     {
         Job job1 = new Job();
         job1._jobTitle = "Machine Operator";
+        
+        job1._duties = "Monitoring Transactions and traffic.";
         job1._company = "Sagma Agencies";
-        job1._duties = "Monitoring Transactions and traffic."
         job1._startDate = 2017;
         job1._endDate = 2020;
 

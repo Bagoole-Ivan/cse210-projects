@@ -10,7 +10,7 @@ public class Job
 
     public void Display()
     {
-        Console.WriteLine($"({_company})({_jobTitle})({_duties}){_startDate}{_endDate}");
+        Console.WriteLine($"({_company})({_jobTitle})({_duties}){_startDate} - {_endDate}");
     }
 
 }
