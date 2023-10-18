@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+
 
 namespace simpleCalculator
 {
@@ -18,15 +21,15 @@ namespace simpleCalculator
     }
 
     /* Inheriting from the Figure class */
-    class Rentangle : Figure
+    class Rectangle : Figure
     {
-        public Rentangle(Int32 w, Int32 h)
+        public Rectangle(Int32 w, Int32 h)
         {
             this.w = w;
             this.h = h;
         }
 
-        /* Encasulation */
+        /* Encapsulation */
         public Int32 w { get; set; }
         public Int32 h { get; set; }
 
@@ -34,6 +37,52 @@ namespace simpleCalculator
         public override Int32 Perimeter()
         {
             return 2 * w + 2 * h;
+        }
+    }
+
+    class Square : Figure
+    {
+        public Square(Int32 s)
+        {
+            this.s = s;
+        }
+
+        /* Encapsulation */
+        public Int32 s { get; set; }
+
+        /* Polymorphism */
+        public override Int32 Perimeter()
+        {
+            return s * 4;
+        }
+    }
+
+    class irregularPentagon : Figure
+    {
+        public irregularPentagon(Int32 s1, Int32 s2, Int32 s3, Int32 s4, Int32 s5, Int32 s6, Int32 s7)
+        {
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.s4 = s4;
+            this.s5 = s5;
+            this.s6 = s6;
+            this.s7 = s7;
+        }
+
+        /* Encapsulation */
+        public Int32 s1 { get; set; }
+        public Int32 s2 { get; set; }
+        public Int32 s3 { get; set; }
+        public Int32 s4 { get; set; }
+        public Int32 s5 { get; set; }
+        public Int32 s6 { get; set; }
+        public Int32 s7 { get; set; }
+
+        /* Polymorphism */
+        public override Int32 Perimeter()
+        {
+            return s1 + s2 + s3 + s4 + s5 + s6 + s7;
         }
     }
 
@@ -56,18 +105,50 @@ namespace simpleCalculator
         }
     }
 
+    class Polygon : Figure
+    {
+        public Polygon(Int32 s1, Int32 s2, Int32 s3, Int32 s4, Int32 s5)
+        {
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.s4 = s4;
+            this.s5 = s5;
+        }
+
+        public Int32 s1 { get; set; }
+        public Int32 s2 { get; set; }
+        public Int32 s3 { get; set; }
+        public Int32 s4 { get; set; }
+        public Int32 s5 { get; set; }
+
+        public override Int32 Perimeter()
+        {
+            return s1 + s2 + s3 + s4 + s5;
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Figure rentangle = new Rentangle(10, 23);
+            Figure rectangle = new Rectangle(10, 23);
             Figure triangle = new Triangle(23, 11, 9);
+            Figure square = new Square(4);
+            Figure polygon = new Polygon(5, 5, 5, 5, 5);
+            Figure IrregularPentagon = new irregularPentagon(3, 6, 8, 9, 11, 13, 16);
 
-            Int32 rentanglePerimeter = rentangle.Perimeter();
+            Int32 rectanglePerimeter = rectangle.Perimeter();
             Int32 trianglePerimeter = triangle.Perimeter();
+            Int32 squarePerimeter = square.Perimeter();
+            Int32 polygonPerimeter = polygon.Perimeter();
+            Int32 IrregularPentagonPerimeter = IrregularPentagon.Perimeter();
 
-            Console.WriteLine("Rentangle perimeter: " + rentanglePerimeter);
+            Console.WriteLine("Rectangle perimeter: " + rectanglePerimeter);
             Console.WriteLine("Triangle perimeter: " + trianglePerimeter);
+            Console.WriteLine("Square perimeter: " + squarePerimeter);
+            Console.WriteLine("Polygon perimeter: " + polygonPerimeter);
+            Console.WriteLine("irregularPentagon perimeter" + IrregularPentagonPerimeter);
         }
     }
 }
