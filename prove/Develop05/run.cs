@@ -1,4 +1,4 @@
-public class exercise : goal
+public class exercise : goals
 {
     private double _length;
     private double _time;

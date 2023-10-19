@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<goal> goal = new List<goal>();
+        List<goals> goals = new List<goals>();
 
         Drinkwater s1 = new Drinkwater("How many litres of water did you drink?", 3);
         myGoals.Add(s1);

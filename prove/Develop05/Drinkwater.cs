@@ -1,4 +1,4 @@
-public class Drinkwater : goal
+public class Drinkwater : goals
 {
     private string _litres;
 

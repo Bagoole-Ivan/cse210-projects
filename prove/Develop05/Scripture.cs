@@ -1,4 +1,4 @@
-public class Scripture : goal
+public class Scripture : goals
 {
     private double _scripture;
 
