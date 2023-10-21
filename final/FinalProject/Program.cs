@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 namespace simpleCalculator
 {
 
-    /*Simple Calculator to calculate the perimeter of a Rectangle and a Triangle */
+    /*Simple Calculator to calculate the perimeter and area of a Rectangle and a Triangle and some other shapes */
 
     /* Abstraction */
     abstract class Figure
